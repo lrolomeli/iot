@@ -2,6 +2,39 @@
 
 Contains all projects and code labs and homework of this course.
 
+## Code Explanation
+
+### iot_pr.py
+
+This Python code connects to a Firebase Realtime Database, simulates the collection of temperature sensor data, processes this data to detect anomalies, and takes action if temperatures outside the normal range (0.0 °C to 35.0 °C) are detected.
+
+Here’s a breakdown of what each part of the code does:
+
+    - Firebase Connection: Connects to a Firebase database using specific credentials.
+    - Data Collection: Retrieves the last 3 temperature records from Firebase.
+    - Anomaly Detection: Checks if the temperature is outside the normal range (below 0.0 °C or above 35.0 °C).
+    - Action: Prints an alert in red if an anomaly is detected.
+    - Loop: Repeats the process every 30 seconds.
+
+### publisher and subscriber MQTT scripts
+
+This code demonstrates how to publish and subscribe to MQTT topics.
+
+Publisher: Connects to an MQTT broker and continuously publishes random temperature (20.0°C to 25.0°C) and humidity (30% to 60%) data to specific topics every 5 seconds.
+Subscriber: Connects to the same MQTT broker, subscribes to the temperature and humidity topics, and prints the received data.
+Both parts involve setting up a client, connecting to the broker, and handling either data publishing or receiving.
+
+### Computing Levels
+
+This code simulates an IoT architecture with Edge, Fog, Roof, and Cloud Computing:
+
+    Edge Devices: Five simulated IoT devices generate temperature and humidity data, stored in dataframes.
+    Fog Node: Aggregates data from all devices, calculating average temperature and humidity.
+    Roof Node: Further aggregates data from the Fog Node, computing overall averages.
+    Cloud Processing: Prints the processed data, simulating advanced processing and storage in the cloud.
+    
+The entire process is executed sequentially within the main_simulation function.
+
 ## Getting Started
 
 These instructions will give you a copy of the project up and running on
